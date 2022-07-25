@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Orinov.Application;
 using Orinov.Data.Context;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServiceConfigurations();
