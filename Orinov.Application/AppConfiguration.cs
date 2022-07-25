@@ -11,12 +11,14 @@ namespace Orinov.Application
         public static void AddDIContainers(this IServiceCollection services)
         {
             services.AddTransient<IAnnouncementInterface, AnnouncementRepository>();
+            services.AddTransient<IPublicationInterface, PublicationRepository>();
+            services.AddTransient<IPersonalInfoInterface, PersonalInfoRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         public static void AddServiceConfigurations(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }
@@ -28,10 +30,21 @@ namespace Orinov.Application
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseStaticFiles();
+            app.UseRouting();
             app.UseHttpsRedirection();
             app.UseAuthorization();
-            app.MapControllers();
+            app.UseAuthentication();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+                endpoints.MapControllers();
+            });
+
             app.Run();
         }
     }

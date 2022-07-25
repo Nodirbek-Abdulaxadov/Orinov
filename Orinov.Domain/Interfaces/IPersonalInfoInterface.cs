@@ -2,7 +2,7 @@
 
 namespace Orinov.Domain.Interfaces
 {
-    public interface ICVInterface : IGenericInterface<Cvmodel>
+    public interface IPersonalInfoInterface : IGenericInterface<PersonalInformation>
     {
     }
 }

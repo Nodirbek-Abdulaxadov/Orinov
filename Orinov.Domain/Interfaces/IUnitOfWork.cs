@@ -4,7 +4,7 @@
     {
         IAnnouncementInterface Announcements { get; }
         IPublicationInterface Publications { get; }
-        ICVInterface CVInterface { get; }
+        IPersonalInfoInterface PersonalInformations { get; }
         void Complete();
     }
 }
