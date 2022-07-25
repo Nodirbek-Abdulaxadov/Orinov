@@ -8,12 +8,20 @@ namespace Orinov.Data.Repositories
         private readonly OrinovDbContext context;
 
         public UnitOfWork( OrinovDbContext context,
-                           IAnnouncementInterface announcement)
+                           IAnnouncementInterface announcement,
+                           IPublicationInterface publicationInterface,
+                           ICVInterface cvInterface)
         {
             this.context = context;
             Announcements = announcement;
+            Publications = publicationInterface;
+            CVInterface = cvInterface;
         }
         public IAnnouncementInterface Announcements { get; }
+
+        public IPublicationInterface Publications { get; }
+
+        public ICVInterface CVInterface {get; }
 
         public void Complete()
         {

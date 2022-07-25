@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Orinov.Domain.Entities;
 using Orinov.Domain.Interfaces;
 
 namespace Orinov.API.Controllers
@@ -14,10 +14,13 @@ namespace Orinov.API.Controllers
         {
             this.unitOfWork = unitOfWork;
         }
-        [HttpGet, Route("getall")]
-        public async Task<IActionResult> Get()
-        {
-            return Ok(await unitOfWork.Announcements.GetAll());
-        }
+
+        // GET: api/<AnnouncementController>
+        [HttpGet]
+        public async Task<IEnumerable<Announcement>> Get() => await unitOfWork.Announcements.GetAll();
+
+        // GET api/<AnnouncementController>/5
+        [HttpGet("{id}")]
+        public async Task<Announcement> Get(int id) => await unitOfWork.Announcements.Get(id);
     }
 }
