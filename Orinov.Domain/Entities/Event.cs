@@ -8,7 +8,7 @@
         }
 
         public int Id { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
         public string? SpeakerEn { get; set; }
         public string? SpeakerUz { get; set; }
         public string? SpeakerRu { get; set; }

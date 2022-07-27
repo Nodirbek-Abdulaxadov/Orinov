@@ -3,7 +3,7 @@
 namespace Orinov.API.Areas.Admin.Controllers
 {
     [Area("admin")]
-    public class HomeController : Controller
+    public class EmploymentController : Controller
     {
         public IActionResult Index()
         {

@@ -38,6 +38,12 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Employment\" />
+    <Folder Include="Areas\Admin\Views\Education\" />
+    <Folder Include="Areas\Admin\Views\Languages\" />
+    <Folder Include="Areas\Admin\Views\Researchs\" />
+    <Folder Include="Areas\Admin\Views\Personal\" />
+    <Folder Include="Areas\Admin\Views\Publications\" />
   </ItemGroup>
 
 </Project>

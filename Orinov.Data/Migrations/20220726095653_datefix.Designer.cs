@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Orinov.Data.Context;
@@ -11,9 +12,10 @@ using Orinov.Data.Context;
 namespace Orinov.Data.Migrations
 {
     [DbContext(typeof(OrinovDbContext))]
-    partial class OrinovDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220726095653_datefix")]
+    partial class datefix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

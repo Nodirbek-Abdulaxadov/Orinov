@@ -5,6 +5,7 @@
         IAnnouncementInterface Announcements { get; }
         IPublicationInterface Publications { get; }
         IPersonalInfoInterface PersonalInformations { get; }
+        IEventInterface Events { get; }
         void Complete();
     }
 }

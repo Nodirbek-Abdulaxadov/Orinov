@@ -11,6 +11,7 @@ namespace Orinov.Application
         public static void AddDIContainers(this IServiceCollection services)
         {
             services.AddTransient<IAnnouncementInterface, AnnouncementRepository>();
+            services.AddTransient<IEventInterface, EventRepository>();
             services.AddTransient<IPublicationInterface, PublicationRepository>();
             services.AddTransient<IPersonalInfoInterface, PersonalInfoRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
